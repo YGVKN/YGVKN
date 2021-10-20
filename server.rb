@@ -1,3 +1,4 @@
+require 'webrick'
 class WebServer < WEBrick::HTTPServlet::AbstractServlet
   def do_GET(request, response)
      case request.path
@@ -16,8 +17,8 @@ class WebServer < WEBrick::HTTPServlet::AbstractServlet
      end
   end
 end
-
-
+#
+#
 if __FILE__ == $0
   # Запускаем сервер локально на порте 8000
   server = WEBrick::HTTPServer.new :Port => 8000
